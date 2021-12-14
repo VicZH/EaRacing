@@ -170,6 +170,55 @@ Definitely, please feel free to use the open sourced codes on [GitHub](https://g
 If you have any suggestions or questions, please [let me know](https://github.com/VicZH/EaRacing/issues).
 """)
 
+
+st.header('What algorithm abbreviation stands for?')
+st.write("""
+
+1. **BAT: Bat Algorithm** 
+    
+    Yang, Xin-She. "A new metaheuristic bat-inspired algorithm." Nature inspired cooperative strategies for optimization (NICSO 2010). Springer Berlin Heidelberg, 2010. 65-74. DOI: http://dx.doi.org/10.1007/978-3-642-12538-6_6
+2. **CS: Cuckoo Search**
+
+    Yang, Xin-She, and Suash Deb. "Cuckoo search via Lévy flights." Nature & Biologically Inspired Computing, 2009. NaBIC 2009. World Congress on. IEEE, 2009. DOI: http://dx.doi.org/10.1109/NABIC.2009.5393690
+3. **DE: Differential Evolution**
+
+    Storn, Rainer. "On the usage of differential evolution for function optimization." Proceedings of North American Fuzzy Information Processing. IEEE, 1996.
+4. **FFA: Firfly Algorithm**
+
+    Yang, Xin-She. "Firefly algorithm, stochastic test functions and design optimisation." International Journal of Bio-Inspired Computation 2.2 (2010): 78-84. http://dx.doi.org/10.1504/IJBIC.2010.032124
+5. **GA: Genetic algorithm**
+
+    Holland, J. "Genetic algorithms". Scientific American. 1992
+6. **GWO: Grey Wolf Optimizer**
+
+    S. Mirjalili, S. M. Mirjalili, A. Lewis, Grey Wolf Optimizer, accepted in Advances in Engineering Software , vol. 69, pp. 46-61, 2014, DOI:http://dx.doi.org/10.1016/j.advengsoft.2013.12.007
+7. **HHO: Harris hawks optimization**
+
+    Ali Asghar Heidari, Seyedali Mirjalili, Hossam Faris, Ibrahim Aljarah, Majdi Mafarja, Huiling Chen, "Harris hawks optimization: Algorithm and applications. ", Future Generation Computer Systems, DOI: https://doi.org/10.1016/j.future.2019.02.028
+8. **JAYA: **
+
+    Rao, R. "Jaya: A simple and new optimization algorithm for solving constrained and unconstrained optimization problems." International Journal of Industrial Engineering Computations 7.1 (2016): 19-34.
+9. **MFO: Moth-flame optimization**
+
+    S. Mirjalili, Moth-flame optimization algorithm: A novel nature-inspired heuristic paradigm, Knowledge-based Systems, Volume 89, Pages 229-249, DOI: http://dx.doi.org/10.1016/j.knosys.2015.07.006
+10. **MVO: Multi-Verse Optimizer**
+
+    S. M. Mirjalili, A. Hatamlou, " Multi-Verse Optimizer: a nature-inspired algorithm for global optimization " ,Neural Computing and Applications, in press, 2015, DOI: http://dx.doi.org/10.1007/s00521-015-1870-7
+11. **PSO: Particle Swarm Optimization**
+
+    Kennedy, J. and Eberhart, R. "Particle swarm optimization. In Neural Networks, 1995. Proceedings.", IEEE International Conference on, volume 4, pages 1942–1948 vol.4. 1995
+12. **SCA: **
+
+    Mirjalili, Seyedali. "SCA: a sine cosine algorithm for solving optimization problems." Knowledge-based systems 96 (2016): 120-133.
+13. **SSA: **
+
+    Mirjalili, Seyedali, et al. "Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems." Advances in Engineering Software 114 (2017): 163-191.
+14. **WOA: Whale Optimization Algorithm**
+
+    S. Mirjalili, A. Lewis, The Whale Optimization Algorithm, Advances in Engineering Software , in press, 2016, DOI: http://dx.doi.org/10.1016/j.advengsoft.2016.01.008
+""")
+
+
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.info("""
