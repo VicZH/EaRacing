@@ -98,12 +98,14 @@ if if_start:
             __res = pd.DataFrame(__res_val,columns=__res_columns)
             res_plot.add_rows(__res)
         res_best = 'Current best objective values are:\n'
+        res_best += '-'*70+'\n'
         res_rank = np.argsort(allEA_best)
         for ea_id,ea in enumerate(allEAs):
             current_ea_rank = np.where(res_rank==ea_id)[0][0]+1
-            res_best += '||' +' '*(50//(num_ea+1))*current_ea_rank 
-            res_best += '🏇' + '=' *(50//(num_ea+1))*(num_ea-current_ea_rank+1) 
-            res_best += ' %s: %f\n'%(ea.optimizer,ea.best)
+            res_best += '||%3.3f'%(ea.best) +' '*(50//(num_ea+1))*current_ea_rank 
+            res_best += '%s🏇'%ea.optimizer + ' ' *(50//(num_ea+1))*(num_ea-current_ea_rank+1) 
+            res_best += '\n'
+            res_best += '-'*70+'\n'
         res_text.text(res_best)
         progress_bar.progress((run_id/max_iter))
     # show solutions

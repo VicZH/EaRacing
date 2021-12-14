@@ -66,11 +66,8 @@ class FFA(solution):
             self.alpha = alpha_new(self.alpha, self.maxiers)
 
             #% Evaluate new solutions (for all n fireflies)
-            zn = numpy.zeros(self.popnum)
-            Lightn = numpy.zeros(self.popnum)
-            for i in range(self.popnum):
-                zn[i] = self.objf(self.solutions[i, :]-self.sol_shift)
-                Lightn[i] = zn[i]
+            zn = self.population_fitness.copy()
+            Lightn = zn.copy()
 
             # Ranking fireflies by their light intensity/objectives
             Lightn = numpy.sort(zn)
@@ -80,15 +77,7 @@ class FFA(solution):
             # Find the current best
             nso = ns
             Lighto = Lightn
-            nbest = ns[0, :]
-            Lightbest = Lightn[0]
 
-            #% For output only
-            fbest = Lightbest
-
-            #% Move all fireflies to the better locations
-            #    [ns]=ffa_move(n,d,ns,Lightn,nso,Lighto,nbest,...
-            #          Lightbest,alpha,betamin,gamma,Lb,Ub);
             scale = []
             for b in range(self.dim):
                 scale.append(abs(self.ub[b] - self.lb[b]))

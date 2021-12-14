@@ -69,16 +69,6 @@ class CS(solution):
                 for k in range(self.dim):
                     self.solutions_new[j,k] = numpy.clip(s[k], self.lb[k], self.ub[k])
 
-            # Evaluate new solutions and find best
-            for i in range(self.popnum):
-                fitness = self.objf(self.solutions_new[i, :]-self.sol_shift)
-                if fitness < self.population_fitness[i]:
-                    self.population_fitness[i] = fitness
-                    self.solutions[i] = self.solutions_new[i].copy()
-                    if fitness < self.best:
-                        self.best = fitness
-                        self.bestIndividual = self.solutions[i]
-
             # Replace some solutions by constructing new solutions
             # Discovered or not
             tempnest = numpy.zeros((self.popnum, self.dim))

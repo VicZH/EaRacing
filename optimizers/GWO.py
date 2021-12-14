@@ -41,6 +41,7 @@ class GWO(solution):
         # calculate fitness for all the population
         for i in range(PopSize):
             fitness = objf(self.solutions[i, :]-self.sol_shift)
+            self.population_fitness += [fitness]
             if fitness < self.best:
                 self.best = fitness
                 self.bestIndividual = self.solutions[i, :]
@@ -49,7 +50,7 @@ class GWO(solution):
 
         for i in range(self.popnum):
             # Calculate objective function for each search agent
-            fitness = self.objf(self.solutions[i, :]-self.sol_shift)
+            fitness = self.population_fitness[i]
 
             # Update Alpha, Beta, and Delta
             if fitness < self.Alpha_score:
@@ -123,6 +124,7 @@ class GWO(solution):
         for i in range(self.popnum):
             self.solutions[i] = numpy.clip(self.solutions[i], self.lb, self.ub)
             fitness = self.objf(self.solutions[i, :]-self.sol_shift)
+            self.population_fitness[i] = fitness
             if fitness < self.best:
                 self.best = fitness
                 self.bestIndividual = self.solutions[i, :]
