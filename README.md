@@ -1,7 +1,7 @@
 # Evolutionary Algorithm Racing 🐎
 
 Evolutionary algorithm racing is a simple web app to try out different evolutionary algorithms
-https://share.streamlit.io/viczh/earacing/main/eaApp.py
+https://share.streamlit.io/viczh/evolutionary-algorithm-racing/main/eaApp.py
 
 ## Features 
 - 14 evolutionary algorithms 
