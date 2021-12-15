@@ -12,8 +12,8 @@ st.set_page_config(
 
 """
 # Evolutionary Algorithm Racing 🐎
-[![GitHubLicense](https://img.shields.io/github/license/VicZH/EaRacing)](https://github.com/VicZH/EaRacing)
-[![GitHubIssues](https://img.shields.io/github/issues/VicZH/EaRacing)](https://github.com/VicZH/EaRacing/issues)
+[![GitHubLicense](https://img.shields.io/github/license/VicZH/Evolutionary-Algorithm-Racing)](https://github.com/VicZH/Evolutionary-Algorithm-Racing)
+[![GitHubIssues](https://img.shields.io/github/issues/VicZH/Evolutionary-Algorithm-Racing)](https://github.com/VicZH/Evolutionary-Algorithm-Racing/issues)
 """
 
 st.markdown("<br>", unsafe_allow_html=True)
@@ -23,14 +23,14 @@ Let's find out which evolutionary algorithm will win the race:
 
 1. Choice one or multiple evolutionary algorithms below
 2. Pick a problem to test
-3. Using the slider to give the dimension of the test porblem, number of candidate solutions for a evolutionary algorithm and maximum number of function calls
+3. Using the slider to give the dimension of the test problem, number of candidate solutions for an evolutionary algorithm and maximum number of function calls
 4. Click the run button to see results
 ---
 """
 
 # with layout_col1:
 ea_options = st.multiselect(
-    'Which evolutionary algorithms you want to compare',
+    'Which evolutionary algorithms do you want to compare',
     ['DE','SSA', 'PSO', 'GA', 'BAT','FFA','GWO','WOA','MVO','MFO','CS','HHO','SCA','JAYA'],
     ['DE'])
 
@@ -52,9 +52,12 @@ m = st.markdown("""
 <style>
 div.stButton > button:first-child {
     display: block;
-    width:30%;
+    width:20%;    
     margin-left: auto;
     margin-right: auto;
+    border-radius: 30%;
+    font-size: 20px;
+    font-weight: bold;
 }
 </style>""", unsafe_allow_html=True)
 if len(ea_options):
@@ -68,7 +71,7 @@ if if_start:
     max_iter = int(num_evl/num_dim)
     progress_bar = st.progress(0)
     res_plt = st.container()
-    st.text('Expected objective value is: 0.')
+    st.text('The expected objective value is: 0.')
     res_text = st.empty()
     num_ea = len(ea_options)
     for opt_id in ea_options:
@@ -120,56 +123,49 @@ if if_start:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-st.header('So, What is an Evolutionary Algorithm?')
+st.header('So, what is an Evolutionary Algorithm?')
 
 st.write("""
-In short, evolutionary algorithm is just a way 
-to solve an optimisation problem. Evolutionary 
-algorithms tackle the optimisation problem via 
-a population-based metaheuristic approach which 
+In short, an evolutionary algorithm is just a way to solve an optimisation problem. Evolutionary algorithms tackle the optimisation problem via a population-based metaheuristic approach which 
 does not need to compute a gradient to 
 update the candidate solutions.  
-The procedures for an example of evolutionary 
-algorithm are summaried as follow:
+The procedures for an example of the evolutionary algorithm are summarised below:
 
 1. first, randomly generate a set of candidate solutions
 2. then, calculate the objective value given by each candidate solution
-3. sometime, we need to rank or sort all candidate solutions and find the best one, for minimisation problem we will need to find the one gives the smallest objective value and for the maximisation problem we will need to find the one gives the largest objective value
+3. sometimes, we need to rank or sort all candidate solutions and find the best one, for minimisation problem we will need to find the one that gives the smallest objective value; for the maximisation problem we will need to find the one that results in the largest objective value
 4. next, update the candidate solutions by comparing current candidate solutions
-5. last, comparing the objective value given by each new candidate solution and select some good candidate solutions pass to the next iteration loop
-6. above step will contitune until we reach to the maximum number of function call
+5. last, compare the objective value given by each new candidate solution and select some good candidate solutions to pass to the next iteration loop
+6. above step will continue until reaching the maximum number of the function call
 """)
 
-st.header('Good, so what is the advantages and disadvantages of Evolutionary Algorithms?')
+st.header('Good, so what are the advantages and disadvantages of the Evolutionary Algorithms?')
 st.write("""
-Comparing to gradient-based optimisation method such gradient descent method, 
-people claimed that evolutionary algorithm has the 
-benefit of
+Compared to gradient-based optimisation methods such gradient descent method, 
+people claimed that evolutionary algorithm has the benefit of
 
 1. do not need to compute the gradient of the objective (test or loss) function
-2. so evolutionary algorithm can easily handle objective functions
-that are flat, dynamic, noisy and discontinue.
-3. it can solve optimisation problem subjected to many constrains
-4. additionally, evolutionary algorithm has less 
-chance to be trapped in the local miminums
-5. last but not least, evolutionary algorithm can find multiple global
+2. so the evolutionary algorithm can handle objective functions
+that is flat, dynamic, noisy or discontinued.
+3. it can solve optimisation problems subjected to many constraints
+4. additionally, the evolutionary algorithm has less 
+chance to be trapped in the local minimums
+5. last but not least, the evolutionary algorithm can find multiple global
 optimal solutions at the same time
 
-However, the drawbacks of evolutionary algorithm are
+However, the drawbacks of the evolutionary algorithm are
 
-1. evolutionary algorithm finds the local miminum much slower than the 
+1. evolutionary algorithm finds the local minimum much slower than the 
 gradient-based optimisation method
-2. evolutionary algorithm often hard to handle high 
-dimensional optimisation problem
-3. evolutionary algorithm does not have a clear 
-stopping criterion 
+2. evolutionary algorithm often hard to handle high-dimensional optimisation problem
+3. evolutionary algorithm does not have a clear stopping criterion 
 
 """)
 
-st.header('Cool, can I repurpose or test my own evolutionary algorithm?')
+st.header('Cool, can I repurpose or test my evolutionary algorithm?')
 st.write("""
-Definitely, please feel free to use the open sourced codes on [GitHub](https://github.com/VicZH/EaRacing).
-If you have any suggestions or questions, please [let me know](https://github.com/VicZH/EaRacing/issues).
+Definitely, please feel free to use the open-sourced codes on [GitHub](https://github.com/VicZH/Evolutionary-Algorithm-Racing).
+If you have any suggestions or questions, please [let me know](https://github.com/VicZH/Evolutionary-Algorithm-Racing/issues).
 """)
 
 
@@ -209,10 +205,10 @@ st.write("""
 11. **PSO: Particle Swarm Optimization**
 
     Kennedy, J. and Eberhart, R. "Particle swarm optimization. In Neural Networks, 1995. Proceedings.", IEEE International Conference on, volume 4, pages 1942–1948 vol.4. 1995
-12. **SCA: **
+12. **SCA: Sine Cosine Algorithm**
 
     Mirjalili, Seyedali. "SCA: a sine cosine algorithm for solving optimization problems." Knowledge-based systems 96 (2016): 120-133.
-13. **SSA: **
+13. **SSA: Salp Swarm Algorithm**
 
     Mirjalili, Seyedali, et al. "Salp Swarm Algorithm: A bio-inspired optimizer for engineering design problems." Advances in Engineering Software 114 (2017): 163-191.
 14. **WOA: Whale Optimization Algorithm**
@@ -226,16 +222,17 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.info("""
         Credit: 
 
-        This small app was created by [YP Zhang] (https://www.linkedin.com/in/yunpeng-zhang-34434865/) 
-        and the source code can be found [here](https://github.com/VicZH/EaRacing).
+        This app was created by [YP Zhang] (https://www.linkedin.com/in/yunpeng-zhang-34434865/) 
+        and the source code can be found [here](https://github.com/VicZH/Evolutionary-Algorithm-Racing).
         This app was inspired by many great works like [evolutionary play ground](https://evo-algorithm-playground.herokuapp.com/) 
         created by Alexandre Mundim, [Code Generator](https://traingenerator.jrieke.com/) created by Johannes Rieke
-        and [tensorflow playground](https://playground.tensorflow.org/).
+        and the [tensorflow playground](https://playground.tensorflow.org/) project.
         
         The evolutionary algorithm tested here are based on the python scripts from 
         [EvoloPy](https://github.com/7ossam81/EvoloPy) project. Most of the 
         original python files are modified with some bugs fixed.
 
-        Please feel free to reach out and let me know if you found any issue.
+        Please feel free to reach out and let me know if you found any [issue]
+        (https://github.com/VicZH/Evolutionary-Algorithm-Racing/issues).
     """)
 
